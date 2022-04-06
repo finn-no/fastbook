@@ -4,7 +4,7 @@ from os import path
 
 # set this value to True if you would like to persist datasets locally
 # (including changes to these datasets)
-persisted_data = True
+persisted_data = False
 SHARED_DIR = '/content/gdrive/Shareddrives/FastAICourse/datasets/'
 LOCAL_DIR = '/content/gdrive/MyDrive/SchibstedFastAICourse/datasets/'
 TEMPORARY_PETS_DIR = './pets/'
