@@ -11,7 +11,7 @@ TEMPORARY_PETS_DIR = './pets/'
 LOCAL_PETS_DIR = LOCAL_DIR+'pets/'
 
 def setup(persisted_data):
-    !pip install -Uqq fastai==2.5.5 fastbook fastcore==1.4.1 tornado==5.1.1
+    !pip install -Uqq fastai==2.5.5 fastbook==0.0.20 fastcore==1.4.1 tornado==5.1.1
     import fastbook
     fastbook.setup_book()
     if persisted_data:
