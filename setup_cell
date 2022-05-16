@@ -8,20 +8,32 @@ persisted_data = False
 SHARED_DIR = '/content/gdrive/Shareddrives/FastAICourse/datasets/'
 LOCAL_DIR = '/content/gdrive/MyDrive/SchibstedFastAICourse/datasets/'
 TEMPORARY_PETS_DIR = './pets/'
+TEMPORARY_BULLDOZERS_DIR = './kaggle_bulldozers/'
+TEMPORARY_POLLUTION_DIR = './kaggle_pollution/'
 LOCAL_PETS_DIR = LOCAL_DIR+'pets/'
+LOCAL_BULLDOZERS_DIR = LOCAL_DIR+'kaggle_bulldozers/'
+LOCAL_POLLUTION_DIR = LOCAL_DIR+'kaggle_pollution/'
+path=TEMPORARY_BULLDOZERS_DIR
 
 def setup(persisted_data):
-    !pip install -Uqq fastai==2.5.5 fastbook==0.0.20 fastcore==1.4.1 tornado==5.1.1
+    !pip install -Uqq fastai fastbook fastcore dtreeviz
     import fastbook
     fastbook.setup_book()
     if persisted_data:
-      # check for existing copy on permanent drive location
-      if not path.exists(LOCAL_PETS_DIR):
-        # if local folder does not exist, create folder and untar data
-        !mkdir -p {LOCAL_DIR}
-        !tar xfz {SHARED_DIR}finn_animals.tar.gz --directory {LOCAL_DIR}
+        #NB: While untaring the training folders you are likely to get a 'unknown header' warning - this can be ignored
+        # check for existing copy on permanent drive location
+        if not path.exists(LOCAL_PETS_DIR):
+            # if local folder does not exist, create folder and untar data
+            !mkdir -p {LOCAL_DIR}
+            !tar xfz {SHARED_DIR}finn_animals.tar.gz --directory {LOCAL_DIR}
+            !tar xfz {SHARED_DIR}kaggle_bulldozers.tar.gz --directory {LOCAL_DIR}
+            !tar xfz {SHARED_DIR}kaggle_pollution.tar.gz --directory {LOCAL_DIR}
+        path=LOCAL_BULLDOZERS_DIR
     else:
-      # untar training data to temporary drive location
-      !tar xfz {SHARED_DIR}finn_animals.tar.gz
+        # untar training data to temporary drive location
+        !tar xfz {SHARED_DIR}finn_animals.tar.gz
+        !tar xfz {SHARED_DIR}kaggle_bulldozers.tar.gz
+        !tar xfz {SHARED_DIR}kaggle_pollution.tar.gz
 
 setup(persisted_data)
+
