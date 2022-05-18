@@ -27,13 +27,13 @@ def setup(persisted_data):
             !mkdir -p {LOCAL_DIR}
             !tar xfz {SHARED_DIR}finn_animals.tar.gz --directory {LOCAL_DIR}
             !tar xfz {SHARED_DIR}kaggle_bulldozers.tar.gz --directory {LOCAL_DIR}
-            !tar xfz {SHARED_DIR}kaggle_pollution.tar.gz --directory {LOCAL_DIR}
+            !tar xfz {SHARED_DIR}kaggle_stores.tar.gz --directory {LOCAL_DIR}
         path=LOCAL_BULLDOZERS_DIR
     else:
         # untar training data to temporary drive location
         !tar xfz {SHARED_DIR}finn_animals.tar.gz
         !tar xfz {SHARED_DIR}kaggle_bulldozers.tar.gz
-        !tar xfz {SHARED_DIR}kaggle_pollution.tar.gz
+        !tar xfz {SHARED_DIR}kaggle_stores.tar.gz
 
 setup(persisted_data)
 
