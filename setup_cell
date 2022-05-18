@@ -9,10 +9,10 @@ SHARED_DIR = '/content/gdrive/Shareddrives/FastAICourse/datasets/'
 LOCAL_DIR = '/content/gdrive/MyDrive/SchibstedFastAICourse/datasets/'
 TEMPORARY_PETS_DIR = './pets/'
 TEMPORARY_BULLDOZERS_DIR = './kaggle_bulldozers/'
-TEMPORARY_POLLUTION_DIR = './kaggle_pollution/'
+TEMPORARY_POLLUTION_DIR = './kaggle_stores/'
 LOCAL_PETS_DIR = LOCAL_DIR+'pets/'
 LOCAL_BULLDOZERS_DIR = LOCAL_DIR+'kaggle_bulldozers/'
-LOCAL_POLLUTION_DIR = LOCAL_DIR+'kaggle_pollution/'
+LOCAL_STORES_DIR = LOCAL_DIR+'kaggle_stores/'
 path=TEMPORARY_BULLDOZERS_DIR
 
 def setup(persisted_data):
