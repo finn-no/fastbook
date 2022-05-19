@@ -16,7 +16,7 @@ LOCAL_STORES_DIR = LOCAL_DIR+'kaggle_stores/'
 path=TEMPORARY_BULLDOZERS_DIR
 
 def setup(persisted_data):
-    !pip install -Uqq fastai fastbook fastcore dtreeviz
+    !pip install -Uqq fastai fastbook fastcore dtreeviz folium==0.2.1
     import fastbook
     fastbook.setup_book()
     if persisted_data:
